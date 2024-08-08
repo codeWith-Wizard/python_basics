@@ -14,6 +14,9 @@ int main(){
     }
 
     //int *xptr = &arr; //cant initialize this statement
+
+    //new git comment
+    
     
 
 
