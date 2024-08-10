@@ -7,4 +7,16 @@ pip :       it is basically a file manager for python , we can use it to install
 
 command to use:  (similar to that of flutter)
 ---->   pip install flask 
+---->   pip install pyjokes
+
+TWO types of MODULE:
+1. --- builtin module(preinstalled in python)
+2. --- external module(needs installed in python using pip)
+
+
+=====> PRINCIPLE --> REPL (read -> evaluate -> print -> loop)  <=====
+
+
+
+
 
