@@ -1,0 +1,46 @@
+************   DIFFERENT TYPES OF OPERATORS    **************
+Here’s a table listing all the operators in Python:
+
+| **Category**               | **Operator** | **Description**                           |
+|----------------------------|--------------|-------------------------------------------|
+| **Arithmetic Operators**   | `+`          | Addition                                  |
+|                            | `-`          | Subtraction                               |
+|                            | `*`          | Multiplication                            |
+|                            | `/`          | Division                                  |
+|                            | `%`          | Modulus (remainder)                       |
+|                            | `**`         | Exponentiation (power)                    |
+|                            | `//`         | Floor division (quotient)                 |
+| **Comparison Operators**   | `==`         | Equal to                                  |
+|                            | `!=`         | Not equal to                              |
+|                            | `>`          | Greater than                              |
+|                            | `<`          | Less than                                 |
+|                            | `>=`         | Greater than or equal to                  |
+|                            | `<=`         | Less than or equal to                     |
+| **Logical Operators**      | `and`        | Logical AND                               |
+|                            | `or`         | Logical OR                                |
+|                            | `not`        | Logical NOT                               |
+| **Bitwise Operators**      | `&`          | Bitwise AND                               |
+|                            | `|`          | Bitwise OR                                |
+|                            | `^`          | Bitwise XOR (exclusive OR)                |
+|                            | `~`          | Bitwise NOT (inversion)                   |
+|                            | `<<`         | Bitwise left shift                        |
+|                            | `>>`         | Bitwise right shift                       |
+| **Assignment Operators**   | `=`          | Assignment                                |
+|                            | `+=`         | Add and assign                            |
+|                            | `-=`         | Subtract and assign                       |
+|                            | `*=`         | Multiply and assign                       |
+|                            | `/=`         | Divide and assign                         |
+|                            | `%=`         | Modulus and assign                        |
+|                            | `**=`        | Exponent and assign                       |
+|                            | `//=`        | Floor divide and assign                   |
+|                            | `&=`         | Bitwise AND and assign                    |
+|                            | `|=`         | Bitwise OR and assign                     |
+|                            | `^=`         | Bitwise XOR and assign                    |
+|                            | `<<=`        | Bitwise left shift and assign             |
+|                            | `>>=`        | Bitwise right shift and assign            |
+| **Identity Operators**     | `is`         | Evaluates if both sides refer to the same object |
+|                            | `is not`     | Evaluates if both sides do not refer to the same object |
+| **Membership Operators**   | `in`         | Evaluates if a value is present in a sequence |
+|                            | `not in`     | Evaluates if a value is not present in a sequence |
+
+This table covers the major categories and specific operators available in Python.   

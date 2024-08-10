@@ -1,0 +1,22 @@
+size of datatypes : 
+**** it is different from that of c/c++ ****
+
+Here’s a tabular comparison of the typical sizes of common data types in Python vs. C on a 64-bit system:
+
+| **Data Type** | **Python Size**       | **C Size**       |
+|---------------|-----------------------|------------------|
+| **int**       | 24 bytes              | 4 bytes          |
+| **float**     | 24 bytes              | 4 bytes          |
+| **double**    | N/A                   | 8 bytes          |
+| **bool**      | 28 bytes              | 1 byte           |
+| **char**      | N/A                   | 1 byte           |
+| **str**       | 49 bytes (empty)      | N/A              |
+| **list**      | 56 bytes (empty)      | N/A              |
+| **tuple**     | 40 bytes (empty)      | N/A              |
+| **dict**      | 64 bytes (empty)      | N/A              |
+| **set**       | 216 bytes (empty)     | N/A              |
+| **pointer**   | N/A                   | 8 bytes          |
+
+**Notes:**
+- In Python, `str`, `list`, `tuple`, `dict`, and `set` sizes are for empty objects. Their size increases with content.
+- In C, `char`, `double`, and `pointer` are fixed-size, but their equivalents in Python (like `str` and objects) are more complex and dynamic, hence not directly comparable.

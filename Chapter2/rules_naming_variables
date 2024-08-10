@@ -1,0 +1,5 @@
+Rules for defining the variable names:
+1=> can contain alphabets, digits and underscores
+2=> can only start with an alphabet or underscore
+3=> cant start with a digits
+4=> no white space is allowed to be used inside a variable name
