@@ -5,10 +5,12 @@ b = 2;          #integer...
 c = "harry";    #strings...
 d = 71.42;      #floating...
 e = False;      #boolean...
-f = None;       #none type variable....*imp*
+f = None; 
+g ='h';      #none type variable....*imp*
 
 print("size of integer : " , sys.getsizeof(a));
 print("size of float : " , sys.getsizeof(d));
 print("size of string : " , sys.getsizeof(c));
 print("size of bool : " , sys.getsizeof(e));
 print("size of none : " , sys.getsizeof(f));
+print("size of h : " , sys.getsizeof(g));
