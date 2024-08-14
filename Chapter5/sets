@@ -1,0 +1,71 @@
+In Python, a **set** is an unordered collection of unique elements. Sets are defined with curly braces `{}` or with the `set()` function, and they automatically remove any duplicate elements. Sets are useful when you need to store non-repeating values and perform operations like union, intersection, or difference.
+
+### Key Features of Sets:
+- **Unordered**: The elements in a set do not have a specific order.
+- **Unique**: A set cannot contain duplicate elements.
+- **Mutable**: You can add or remove elements from a set.
+- **Immutable Elements**: Only immutable (non-changeable) data types like numbers, strings, and tuples can be added as elements in a set. Lists or dictionaries cannot be elements of a set.
+
+### Creating a Set:
+You can create a set by using curly braces or the `set()` function:
+```python
+# Using curly braces
+my_set = {1, 2, 3, 4}
+
+# Using set() function
+another_set = set([1, 2, 3, 4, 4])  # duplicates will be removed
+print(another_set)  # Output: {1, 2, 3, 4}
+```
+
+### Basic Operations:
+
+- **Adding elements**:
+  ```python
+  my_set.add(5)
+  print(my_set)  # Output: {1, 2, 3, 4, 5}
+  ```
+
+- **Removing elements**:
+  ```python
+  my_set.remove(3)  # Raises KeyError if 3 is not present
+  my_set.discard(2)  # Removes 2 if present, otherwise does nothing
+  ```
+
+- **Set length**:
+  ```python
+  len(my_set)  # Returns the number of elements in the set
+  ```
+
+### Set Operations:
+
+- **Union**: Combines elements from both sets.
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  print(set1 | set2)  # Output: {1, 2, 3, 4, 5}
+  ```
+
+- **Intersection**: Returns elements common to both sets.
+  ```python
+  print(set1 & set2)  # Output: {3}
+  ```
+
+- **Difference**: Elements in the first set but not in the second.
+  ```python
+  print(set1 - set2)  # Output: {1, 2}
+  ```
+
+- **Symmetric Difference**: Elements in either set, but not in both.
+  ```python
+  print(set1 ^ set2)  # Output: {1, 2, 4, 5}
+  ```
+
+### Set Methods:
+
+- `add()`: Adds an element to the set.
+- `remove()`: Removes an element (raises error if not found).
+- `discard()`: Removes an element (does not raise error if not found).
+- `pop()`: Removes and returns an arbitrary element from the set.
+- `clear()`: Removes all elements from the set.
+
+Sets are great for when you need to handle unique data and perform common mathematical set operations efficiently.
