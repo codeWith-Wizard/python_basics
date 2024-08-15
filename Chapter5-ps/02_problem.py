@@ -7,6 +7,8 @@ for i in range(9):
     temp = input(f"enter no{i+1} : ") #*****imp statement used
     num_list.append(temp);
 
+'''f STANDS FOR FORMATTED STRING LITERAL'''
+
 #converting input to set122
 num_set = set(num_list)
 print(num_set);
