@@ -1,0 +1,112 @@
+In Python, **conditional statements** are used to control the flow of execution based on whether a condition is `True` or `False`. The most common conditional statements in Python are:
+
+1. **`if` Statement**
+2. **`if-else` Statement**
+3. **`if-elif-else` Statement**
+4. **Nested `if` Statements**
+5. **Ternary Conditional Expression**
+
+### 1. `if` Statement
+The `if` statement is the simplest form of a conditional statement. It checks if a condition is `True` and executes a block of code if it is.
+
+**Syntax:**
+```python
+if condition:
+    # Block of code to execute if the condition is True
+```
+
+**Example:**
+```python
+x = 10
+if x > 5:
+    print("x is greater than 5")  # Output: x is greater than 5
+```
+
+### 2. `if-else` Statement
+The `if-else` statement provides an alternative block of code to execute if the condition is `False`.
+
+**Syntax:**
+```python
+if condition:
+    # Block of code to execute if the condition is True
+else:
+    # Block of code to execute if the condition is False
+```
+
+**Example:**
+```python
+x = 3
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is 5 or less")  # Output: x is 5 or less
+```
+
+### 3. `if-elif-else` Statement
+The `if-elif-else` statement allows for checking multiple conditions. If the first condition is `False`, it checks the next condition (using `elif`), and so on. If none of the conditions are `True`, the `else` block is executed.
+
+**Syntax:**
+```python
+if condition1:
+    # Block of code to execute if condition1 is True
+elif condition2:
+    # Block of code to execute if condition1 is False and condition2 is True
+else:
+    # Block of code to execute if none of the conditions are True
+```
+
+**Example:**
+```python
+x = 10
+if x < 0:
+    print("x is negative")
+elif x == 0:
+    print("x is zero")
+else:
+    print("x is positive")  # Output: x is positive
+```
+
+### 4. Nested `if` Statements
+Nested `if` statements refer to placing one `if` statement inside another. This is used when you need to make further decisions based on the outcome of an outer condition.
+
+**Syntax:**
+```python
+if condition1:
+    # Outer if statement
+    if condition2:
+        # Inner if statement
+```
+
+**Example:**
+```python
+x = 10
+y = 20
+
+if x > 5:
+    if y > 15:
+        print("x is greater than 5 and y is greater than 15")  # Output: x is greater than 5 and y is greater than 15
+```
+
+### 5. Ternary Conditional Expression (One-liner `if-else`)
+The ternary conditional expression (or inline `if-else`) allows writing an `if-else` statement in one line. It is useful for assigning values or making decisions in a compact way.
+
+**Syntax:**
+```python
+value_if_true if condition else value_if_false
+```
+
+**Example:**
+```python
+x = 10
+result = "Positive" if x > 0 else "Negative or Zero"
+print(result)  # Output: Positive
+```
+
+### Summary of Conditional Statements:
+- **`if`**: Used to execute a block of code if a condition is `True`.
+- **`if-else`**: Provides an alternative block of code to execute if the condition is `False`.
+- **`if-elif-else`**: Used to check multiple conditions and execute the corresponding block.
+- **Nested `if`**: Allows checking conditions within another `if` block.
+- **Ternary Conditional Expression**: A one-liner for `if-else` expressions used in assignments or return statements.
+
+Each of these types has specific use cases depending on the complexity and readability of the code needed for different decision-making scenarios.
