@@ -1,0 +1,164 @@
+### Functions in Python
+
+A **function** in Python is a reusable block of code designed to perform a specific task. It helps in making code modular, reducing redundancy, and improving readability.
+
+#### Key Concepts and Terms
+
+1. **Defining a Function**
+   - Functions are defined using the `def` keyword followed by the function name and parentheses `()`.
+   - Syntax:
+     ```python
+     def function_name(parameters):
+         # function body
+         return result
+     ```
+
+2. **Parameters**
+   - Variables listed inside the parentheses in the function definition. They act as placeholders for the values (arguments) passed to the function when it's called.
+   - Example:
+     ```python
+     def greet(name):
+         print(f"Hello, {name}")
+     ```
+
+3. **Arguments**
+   - The actual values passed to the function when it is called. These values are assigned to the parameters defined in the function.
+   - Example:
+     ```python
+     greet('Tanishq')  # 'Tanishq' is an argument
+     ```
+
+4. **Return Statement**
+   - Functions can return values using the `return` statement. This terminates the function and passes the result back to the caller.
+   - Example:
+     ```python
+     def add(a, b):
+         return a + b
+     result = add(5, 3)  # result is 8
+     ```
+
+5. **Docstrings**
+   - A string literal that appears right after the function definition to describe what the function does. It is useful for documentation.
+   - Example:
+     ```python
+     def multiply(a, b):
+         """This function multiplies two numbers."""
+         return a * b
+     ```
+
+6. **Default Parameters**
+   - You can define default values for parameters. If no argument is passed, the default value will be used.
+   - Example:
+     ```python
+     def greet(name='Guest'):
+         print(f"Hello, {name}")
+     greet()  # Prints: Hello, Guest
+     ```
+
+7. **Variable-Length Arguments**
+   - **`*args` (Positional Arguments)**: Allows the function to accept any number of arguments. These arguments are stored in a tuple.
+     ```python
+     def sum_all(*args):
+         return sum(args)
+     sum_all(1, 2, 3, 4)  # returns 10
+     ```
+
+   - **`**kwargs` (Keyword Arguments)**: Allows the function to accept any number of keyword arguments. These arguments are stored in a dictionary.
+     ```python
+     def print_info(**kwargs):
+         for key, value in kwargs.items():
+             print(f"{key}: {value}")
+     print_info(name="Tanishq", age=19)
+     ```
+
+8. **Anonymous Functions (Lambda)**
+   - Lambda functions are small anonymous functions that can have any number of arguments but only one expression. They are used when a function is needed for a short period of time.
+   - Example:
+     ```python
+     square = lambda x: x ** 2
+     print(square(5))  # Output: 25
+     ```
+
+9. **Scope and Lifetime of Variables**
+   - **Local Scope**: Variables defined inside a function are local to that function and cannot be accessed outside.
+   - **Global Scope**: Variables defined outside any function are global and can be accessed anywhere.
+   - **Global Keyword**: Allows modification of global variables inside a function.
+     ```python
+     x = 10
+     def change_global():
+         global x
+         x = 20
+     change_global()
+     print(x)  # Output: 20
+     ```
+
+10. **Recursive Functions**
+    - A function that calls itself is called a recursive function. It's commonly used to solve problems like calculating factorial, Fibonacci series, etc.
+    - Example:
+      ```python
+      def factorial(n):
+          if n == 1:
+              return 1
+          else:
+              return n * factorial(n - 1)
+      print(factorial(5))  # Output: 120
+      ```
+
+11. **Higher-Order Functions**
+    - Functions that take other functions as arguments or return them as a result are called higher-order functions.
+    - Example with `map()`:
+      ```python
+      def square(x):
+          return x * x
+      result = map(square, [1, 2, 3, 4])  # Applies 'square' to each element
+      print(list(result))  # Output: [1, 4, 9, 16]
+      ```
+
+12. **Decorators**
+    - A decorator is a higher-order function that modifies the behavior of another function. It is often used to add functionality (e.g., logging) without changing the function's structure.
+    - Example:
+      ```python
+      def decorator(func):
+          def wrapper():
+              print("Function is being called")
+              func()
+              print("Function call ended")
+          return wrapper
+      @decorator
+      def greet():
+          print("Hello")
+      greet()
+      ```
+
+#### Built-in Methods Related to Functions
+
+1. **`map(function, iterable)`**: Applies the given function to all items in the iterable (e.g., list, tuple).
+   ```python
+   numbers = [1, 2, 3, 4]
+   squared = map(lambda x: x ** 2, numbers)
+   print(list(squared))  # Output: [1, 4, 9, 16]
+   ```
+
+2. **`filter(function, iterable)`**: Filters items from the iterable for which the function returns `True`.
+   ```python
+   even_numbers = filter(lambda x: x % 2 == 0, numbers)
+   print(list(even_numbers))  # Output: [2, 4]
+   ```
+
+3. **`reduce(function, iterable)`**: Applies a rolling computation to the items of an iterable (imported from `functools` module).
+   ```python
+   from functools import reduce
+   product = reduce(lambda x, y: x * y, numbers)
+   print(product)  # Output: 24
+   ```
+
+4. **`zip(*iterables)`**: Combines two or more iterables into a single iterable of tuples.
+   ```python
+   names = ["Tanishq", "John"]
+   ages = [19, 20]
+   combined = zip(names, ages)
+   print(list(combined))  # Output: [('Tanishq', 19), ('John', 20)]
+   ```
+
+#### Conclusion
+Functions in Python are powerful tools for organizing and reusing code. Understanding their key concepts, including parameters, return values, and scoping, along with higher-order functions and decorators, will allow you to write clean, modular, and maintainable code.
