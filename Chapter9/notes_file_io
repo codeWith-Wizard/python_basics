@@ -1,0 +1,143 @@
+### File I/O in Python
+
+File I/O (Input/Output) refers to reading from and writing to files in Python. Python provides built-in functions for file handling, allowing you to interact with files stored on your system.
+
+### Opening a File
+The `open()` function is used to open a file. It returns a file object that can be used to read or write to the file.
+
+```python
+file_object = open("filename", "mode")
+```
+
+- **Filename**: The name (and optionally path) of the file to open.
+- **Mode**: The mode in which the file is opened. Some common modes are:
+  - `"r"`: Read mode (default).
+  - `"w"`: Write mode (overwrites the file if it exists, creates a new one if it doesn't).
+  - `"a"`: Append mode (adds data to the end of the file).
+  - `"x"`: Exclusive creation, fails if the file already exists.
+  - `"b"`: Binary mode (used with `"rb"`, `"wb"`, etc., for binary files).
+  - `"t"`: Text mode (default, used for text files).
+
+### Closing a File
+To prevent resource leakage, always close the file after you're done using it. Use the `close()` method:
+
+```python
+file_object.close()
+```
+
+Alternatively, use a `with` statement, which automatically closes the file after the block of code is executed:
+
+```python
+with open("filename", "r") as file_object:
+    # Code to read/write the file
+# File is automatically closed after the block
+```
+
+### Reading from a File
+
+There are several ways to read from a file:
+
+1. **`read()`**: Reads the entire content of the file as a string.
+   ```python
+   with open("filename", "r") as file:
+       content = file.read()
+       print(content)
+   ```
+
+2. **`readline()`**: Reads one line from the file at a time.
+   ```python
+   with open("filename", "r") as file:
+       first_line = file.readline()
+       print(first_line)
+   ```
+
+3. **`readlines()`**: Reads all lines from the file and returns a list of strings.
+   ```python
+   with open("filename", "r") as file:
+       lines = file.readlines()
+       print(lines)  # List of lines
+   ```
+
+### Writing to a File
+
+To write to a file, you can use the following methods:
+
+1. **`write()`**: Writes a string to the file.
+   ```python
+   with open("filename", "w") as file:
+       file.write("Hello, World!")
+   ```
+
+2. **`writelines()`**: Writes a list of strings to the file (no newlines are added automatically).
+   ```python
+   with open("filename", "w") as file:
+       lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+       file.writelines(lines)
+   ```
+
+### File Modes in Detail
+
+| Mode  | Description                                                                 |
+|-------|-----------------------------------------------------------------------------|
+| `"r"` | Read mode. Opens the file for reading (default mode).                       |
+| `"w"` | Write mode. Opens the file for writing (overwrites the file).               |
+| `"a"` | Append mode. Opens the file for appending (adds to the end of the file).    |
+| `"x"` | Exclusive creation. Fails if the file already exists.                       |
+| `"b"` | Binary mode. Used with `"rb"`, `"wb"` to read/write binary files.           |
+| `"t"` | Text mode. Used with text files (default).                                  |
+| `"r+"`| Opens the file for both reading and writing.                                |
+| `"w+"`| Opens the file for both reading and writing (overwrites existing content).  |
+
+### Checking File Existence
+You can check if a file exists before opening it using the `os.path` module or `Path` from `pathlib`.
+
+```python
+import os
+if os.path.exists("filename"):
+    print("File exists")
+else:
+    print("File not found")
+```
+
+### Working with Binary Files
+
+When working with binary files (images, audio, etc.), you should use binary mode (`"rb"`, `"wb"`, etc.).
+
+```python
+with open("image.jpg", "rb") as file:
+    content = file.read()
+```
+
+### File Object Methods
+
+- **`file.readable()`**: Checks if the file is open for reading.
+- **`file.writable()`**: Checks if the file is open for writing.
+- **`file.tell()`**: Returns the current file pointer position.
+- **`file.seek(offset)`**: Moves the file pointer to the specified location.
+
+### Example: Reading and Writing a File
+
+```python
+# Writing to a file
+with open("example.txt", "w") as file:
+    file.write("This is a test.\n")
+
+# Reading from a file
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+```
+
+### Best Practices
+
+1. **Always close files**: Use `with` statement to ensure that files are properly closed.
+2. **Use appropriate modes**: Choose the correct mode (`r`, `w`, `a`) depending on your task.
+3. **Handle exceptions**: Use `try-except` blocks to handle errors (e.g., file not found, permission issues).
+
+```python
+try:
+    with open("nonexistent_file.txt", "r") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File not found!")
+```
