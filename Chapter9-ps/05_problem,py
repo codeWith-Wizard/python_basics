@@ -1,0 +1,18 @@
+
+cuss_words = ["donkey", "bad" , "shit"]
+
+with open("Chapter9-ps/story.txt", "r+") as f:
+    data = f.readlines()
+    new_data = []
+    count  = 0
+    for i in data:
+        i = i.lower()
+        for j in cuss_words:
+            i = i.replace(j ,"####")
+        new_data.append(i)
+
+    f.seek(0)
+    f.writelines(new_data)
+
+
+
